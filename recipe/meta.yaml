@@ -10,7 +10,7 @@ source:
   sha256: a74c13225ca3edcd9a0668e297e4dddc7cf7a47d39fd6b5290c3d86802374d7d
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
   skip: true  # [py2k or win]
 
@@ -24,7 +24,7 @@ requirements:
     - numpy
   run:
     - python
-    - matplotlib >=3
+    - matplotlib-base >=3
     - {{ pin_compatible('numpy') }}
 
 test:
