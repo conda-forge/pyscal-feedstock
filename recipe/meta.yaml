@@ -30,6 +30,8 @@ requirements:
 test:
   imports:
     - pyscal
+  commands:
+    - pip check
 
 about:
   home: https://pyscal.com
