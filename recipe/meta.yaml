@@ -24,12 +24,15 @@ requirements:
     - numpy
   run:
     - python
+    - pip
     - matplotlib-base >=3
     - {{ pin_compatible('numpy') }}
 
 test:
   imports:
     - pyscal
+  commands:
+    - pip check
 
 about:
   home: https://pyscal.com
