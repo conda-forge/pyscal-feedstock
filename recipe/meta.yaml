@@ -1,5 +1,5 @@
 {% set name = "pyscal" %}
-{% set version = "2.3.4" %}
+{% set version = "2.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 7f7009155ad0447c93b2b4afc1cd622630c36e899a8ebbf4e4a0afd57cef7581
+  sha256: 32f19678082402ea2cf810828604bad7e670dc7100afe0c40fb5a8f04525b52f
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py2k or win]
 
 requirements:
@@ -39,7 +39,7 @@ about:
   license: GPL-3.0
   license_family: GPL
   license_file: LICENSE
-  summary: 'Python library written in C++ for calculation of local atomic structural environment'
+  summary: Python library written in C++ for calculation of local atomic structural environment
 
   description: |
     pyscal is a python module for the calculation of local 
