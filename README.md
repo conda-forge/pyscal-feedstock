@@ -5,7 +5,7 @@ Home: https://pyscal.com
 
 Package license: GPL-3.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Python library written in C++ for calculation of local atomic structural environment
 
