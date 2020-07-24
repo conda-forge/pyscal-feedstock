@@ -8,8 +8,7 @@ package:
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 9c0c7f289f0348d1f6268ed3c51f75cbb8cce490d954a73790bd2b7c3e7ea1ce
-  patches:
-    - remove_win.patch
+
 
 build:
   number: 0
