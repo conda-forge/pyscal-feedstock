@@ -4,8 +4,8 @@ Date: Fri, 24 Jul 2020 16:26:37 +0200
 Subject: [PATCH] Update setup.py
 
 ---
- setup.py | 12 ++----------
- 1 file changed, 2 insertions(+), 10 deletions(-)
+ setup.py | 6 +-----
+ 1 file changed, 1 insertions(+), 5 deletions(-)
 
 diff --git a/setup.py b/setup.py
 index fd55cc6..913d0e3 100644
@@ -15,18 +15,17 @@ index fd55cc6..913d0e3 100644
          cmake_args += ["-DCMAKE_BUILD_WITH_INSTALL_RPATH=TRUE"]
          cmake_args += ["-DCMAKE_INSTALL_RPATH={}".format("$ORIGIN")]
  
--        if platform.system() == "Windows":
+         if platform.system() == "Windows":
 -            cmake_args += ['-DCMAKE_LIBRARY_OUTPUT_DIRECTORY_{}={}'.format(
 -                cfg.upper(),
 -                extdir)]
 -            if sys.maxsize > 2**32:
 -                cmake_args += ['-A', 'x64']
--            build_args += ['--', '/m']
--        else:
--            cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
--            build_args += ['--', '-j2']
-+        cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
-+        build_args += ['--', '-j2']
++            cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
+             build_args += ['--', '/m']
+         else:
+             cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
+             build_args += ['--', '-j2']
  
          env = os.environ.copy()
          env['CXXFLAGS'] = '{} -DVERSION_INFO=\\"{}\\"'.format(
