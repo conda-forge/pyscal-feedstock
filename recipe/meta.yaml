@@ -1,5 +1,5 @@
 {% set name = "pyscal" %}
-{% set version = "2.7.2" %}
+{% set version = "2.7.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,8 @@ package:
 
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 2035f1fa817460b1db5969e2f363f7a3af0b4ebe07693915b6f8b069e4558628
-  patches:
-    - remove_win.patch
+  sha256: 9c0c7f289f0348d1f6268ed3c51f75cbb8cce490d954a73790bd2b7c3e7ea1ce
+
 
 build:
   number: 0
