@@ -26,6 +26,7 @@ requirements:
   run:
     - python
     - pip
+    - ase
     - matplotlib-base >=3
     - {{ pin_compatible('numpy') }}
 
