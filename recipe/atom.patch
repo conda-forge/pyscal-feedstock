@@ -1,0 +1,36 @@
+From 0c7f1ab623eca1509e2403e5c5e729ff3785ce93 Mon Sep 17 00:00:00 2001
+From: srmnitc <sarath.r.menon@gmail.com>
+Date: Tue, 22 Sep 2020 10:08:50 +0200
+Subject: [PATCH] minor bug fix in atom
+
+---
+ src/pyscal/atom.cpp | 2 +-
+ src/pyscal/atom.h   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/pyscal/atom.cpp b/src/pyscal/atom.cpp
+index 8173864..2141553 100644
+--- a/src/pyscal/atom.cpp
++++ b/src/pyscal/atom.cpp
+@@ -790,7 +790,7 @@ double Atom::entropy_integrand(double r)
+ }
+ 
+ 
+-double Atom::trapezoid_integration()
++void Atom::trapezoid_integration()
+ {
+ 
+         int nsteps = (rstop - rstart)/h;
+diff --git a/src/pyscal/atom.h b/src/pyscal/atom.h
+index 2b562d6..a59dcee 100644
+--- a/src/pyscal/atom.h
++++ b/src/pyscal/atom.h
+@@ -238,7 +238,7 @@ class Atom{
+         double kb;
+         double gmr(double);
+         double entropy_integrand(double);
+-        double trapezoid_integration();
++        void trapezoid_integration();
+         //results
+         double entropy;
+         double avg_entropy;
