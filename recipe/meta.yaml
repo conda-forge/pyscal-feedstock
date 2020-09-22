@@ -8,7 +8,8 @@ package:
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 472cf7c4a5bdb968e94da48533c95ff746efbc604a29f74d2b78ce5e4a545af3
-
+  patches:
+    - atom.patch
 
 build:
   number: 0
