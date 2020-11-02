@@ -29,6 +29,8 @@ requirements:
     - pip
     - ase
     - matplotlib-base >=3
+    - ipywidgets
+    - plotly
     - {{ pin_compatible('numpy') }}
 
 test:
@@ -38,7 +40,7 @@ test:
     - pip check
 
 about:
-  home: https://pyscal.com
+  home: https://pyscal.org
   license: GPL-3.0
   license_family: GPL
   license_file: LICENSE
@@ -52,7 +54,7 @@ about:
     pyscal is written in C++ with python wrappers using 
     pybind11 which allows for fast calculations with possibilities 
     for easy expansion in python.
-  doc_url: https://pyscal.com
+  doc_url: https://pyscal.org
   dev_url: https://github.com/srmnitc/pyscal/
 
 extra:
