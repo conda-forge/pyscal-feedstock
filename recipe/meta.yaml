@@ -1,5 +1,5 @@
 {% set name = "pyscal" %}
-{% set version = "2.8.14" %}
+{% set version = "2.9.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 472cf7c4a5bdb968e94da48533c95ff746efbc604a29f74d2b78ce5e4a545af3
-  patches:
-    - atom.patch
+  sha256: e2d440acdda6a96b6d45a93075cbf3c98c9e9bf657f1408e53d568a3b6960deb
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py2k]
 
@@ -29,6 +27,8 @@ requirements:
     - pip
     - ase
     - matplotlib-base >=3
+    - ipywidgets
+    - plotly
     - {{ pin_compatible('numpy') }}
 
 test:
@@ -38,7 +38,7 @@ test:
     - pip check
 
 about:
-  home: https://pyscal.com
+  home: https://pyscal.org
   license: GPL-3.0
   license_family: GPL
   license_file: LICENSE
@@ -52,7 +52,7 @@ about:
     pyscal is written in C++ with python wrappers using 
     pybind11 which allows for fast calculations with possibilities 
     for easy expansion in python.
-  doc_url: https://pyscal.com
+  doc_url: https://pyscal.org
   dev_url: https://github.com/srmnitc/pyscal/
 
 extra:
