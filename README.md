@@ -1,7 +1,7 @@
 About pyscal
 ============
 
-Home: https://pyscal.com
+Home: https://pyscal.org
 
 Package license: GPL-3.0
 
@@ -11,7 +11,7 @@ Summary: Python library written in C++ for calculation of local atomic structura
 
 Development: https://github.com/srmnitc/pyscal/
 
-Documentation: https://pyscal.com
+Documentation: https://pyscal.org
 
 pyscal is a python module for the calculation of local
 atomic structural environments including Steinhardt's bond
