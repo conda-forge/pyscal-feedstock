@@ -29,6 +29,7 @@ requirements:
     - matplotlib-base >=3
     - ipywidgets
     - plotly
+    - h5py
     - {{ pin_compatible('numpy') }}
 
 test:
