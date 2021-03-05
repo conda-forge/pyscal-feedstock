@@ -1,5 +1,5 @@
 {% set name = "pyscal" %}
-{% set version = "2.10.12" %}
+{% set version = "2.10.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 6a188c73f2137361a01f330af65f9b4275021160fc20e02ec276deeafcf69fa8
+  sha256: 2ecd18e6f52358292b62e6ba081adcae0ff464e0cfd4c01c0a5c625dc61501fa
 
 build:
   number: 0
