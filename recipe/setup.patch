@@ -14,22 +14,23 @@ diff --git a/setup.py b/setup.py
  import sysconfig
  import platform
  import subprocess
-+import pybind11
++from pybind11.setup_helpers import Pybind11Extension, build_ext
  
  from distutils.version import LooseVersion
  from setuptools import setup, find_packages, Extension
-@@ -86,9 +86,12 @@
+@@ -86,9 +86,13 @@
      # and nowhere else
      package_dir={'':'src'},
      # add an extension module named 'python_cpp_example' to the package
 -    ext_modules=[CMakeExtension('pyscal/catom'), CMakeExtension('pyscal/csystem')],
 +    headers=["src/pyscal/atom.h", "src/pyscal/system.h"],
 +    ext_modules=[
-+        Extension("pyscal.catom", ["src/pyscal/atom.cpp", "src/pyscal/atom_binding.cpp"], extra_link_args=[], language='c++', include_dirs=[pybind11.get_include()]),
-+        Extension("pyscal.csystem", ["src/pyscal/system.cpp", "src/pyscal/system_binding.cpp"], extra_link_args=[], language='c++', include_dirs=[pybind11.get_include()]),
++        Pybind11Extension("pyscal.catom", ["src/pyscal/atom.cpp", "src/pyscal/atom_binding.cpp"], language='c++'),
++        Pybind11Extension("pyscal.csystem", ["src/pyscal/system.cpp", "src/pyscal/system_binding.cpp"], language='c++'),
 +    ],
      # add custom build_ext command
 -    cmdclass=dict(build_ext=CMakeBuild),
++    cmdclass={"build_ext": build_ext},
      zip_safe=False,
      download_url = 'https://github.com/srmnitc/pyscal/archive/2.3.4.tar.gz',
      url = 'https://github.com/srmnitc/pyscal',
