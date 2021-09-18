@@ -13,7 +13,7 @@ source:
 
 build:
   number: 1
-  script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--include-dirs=${PREFIX}/include/voro++"
+  script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--include-dirs=${PREFIX}/include/voro++" --global-option="-lvoro++"
   skip: true  # [py2k]
 
 requirements:
