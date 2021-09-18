@@ -23,6 +23,7 @@ diff --git a/setup.py b/setup.py
      package_dir={'':'src'},
      # add an extension module named 'python_cpp_example' to the package
 -    ext_modules=[CMakeExtension('pyscal/catom'), CMakeExtension('pyscal/csystem')],
++    headers=["src/pyscal/atom.h", "src/pyscal/system.h"],
 +    ext_modules=[
 +        Extension("pyscal.catom", ["src/pyscal/atom.cpp", "src/pyscal/atom_binding.cpp"], extra_link_args=[], language='c++', include_dirs=[pybind11.get_include()]),
 +        Extension("pyscal.csystem", ["src/pyscal/system.cpp", "src/pyscal/system_binding.cpp"], extra_link_args=[], language='c++', include_dirs=[pybind11.get_include()]),
