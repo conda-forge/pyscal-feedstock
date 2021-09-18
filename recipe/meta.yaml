@@ -24,7 +24,6 @@ requirements:
     - pip
     - numpy
     - pybind11
-    - voro
   run:
     - python
     - pip
