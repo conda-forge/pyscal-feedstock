@@ -8,20 +8,25 @@ package:
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 124f9b9df65024a93ea71123ce7c3e3cca89880bc8954babdef852ea9b177fc8
+  patches:
+    - setup.patch
 
 build:
-  number: 0
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py2k]
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
-    - cmake
   host:
     - python
     - pip
     - numpy
+    - pybind11
   run:
     - python
     - pip
