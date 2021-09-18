@@ -9,8 +9,8 @@ Subject: [PATCH] setup
 
 diff --git a/setup.py b/setup.py
 --- a/setup.py	(revision 91836d8baba33b86423603430836af90c1d8217f)
-+++ b/setup.py	(revision a682931ff674dabe8a6cbdb6422648aa970f9444)
-@@ -86,7 +86,10 @@
++++ b/setup.py	(revision 1dd20bb0bb9ce5567193f9cc7f7b3565cb5e5e03)
+@@ -86,9 +86,11 @@
      # and nowhere else
      package_dir={'':'src'},
      # add an extension module named 'python_cpp_example' to the package
