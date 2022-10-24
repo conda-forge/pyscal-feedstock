@@ -1,0 +1,28 @@
+From c7945983b271dec0101648efda2aeed285014fc2 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Mon, 24 Oct 2022 14:53:14 -0600
+Subject: [PATCH] Move visualization to show()
+
+---
+ src/pyscal/core.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/pyscal/core.py b/src/pyscal/core.py
+index e7b00f5..e547a30 100644
+--- a/src/pyscal/core.py
++++ b/src/pyscal/core.py
+@@ -17,7 +17,6 @@
+ import uuid
+ import gzip
+ import io
+-import pyscal.visualization as pv
+ 
+ #------------------------------------------------------------------------------------------------------------
+ """
+@@ -2209,5 +2208,6 @@ def show(self, colorby=None, filterby=None):
+         -------
+         None  
+         """
++        import pyscal.visualization as pv
+         pv.plot_system(self, colorby=colorby, filterby=filterby)                
+ 
