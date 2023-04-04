@@ -1,5 +1,5 @@
 {% set name = "pyscal" %}
-{% set version = "3.0.0.dev.0" %}
+{% set version = "3.0.0.dev.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 34527c75b8901aa6598c0d40a7e71f320566a4b3564e84ebc88c4f6a17b55ff0
+  sha256: 44d436a5774e0cb643b38ea2f8cc1116f5e0372dc30565bdd958df620d6caeaa
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py2k]
 
@@ -31,6 +31,7 @@ requirements:
     - ase
     - spglib
     - {{ pin_compatible('numpy') }}
+    - pyyaml
 
 test:
   imports:
