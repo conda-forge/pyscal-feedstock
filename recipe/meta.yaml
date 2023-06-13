@@ -20,6 +20,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
+    - pybind11
   host:
     - python
     - pip
@@ -32,6 +33,7 @@ requirements:
     - spglib
     - {{ pin_compatible('numpy') }}
     - pyyaml
+    - pybind11
 
 test:
   imports:
