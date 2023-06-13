@@ -1,5 +1,5 @@
 {% set name = "pyscal" %}
-{% set version = "3.0.0.dev.1" %}
+{% set version = "3.0.0.dev.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 44d436a5774e0cb643b38ea2f8cc1116f5e0372dc30565bdd958df620d6caeaa
+  sha256: 9d3f59161ddcacb4a8d2fb9a9566dccf652f0afb3f14b18edf46a9ac4e0836ac
 
 build:
   number: 0
@@ -20,6 +20,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
+    - pybind11
   host:
     - python
     - pip
@@ -32,6 +33,7 @@ requirements:
     - spglib
     - {{ pin_compatible('numpy') }}
     - pyyaml
+    - pybind11
 
 test:
   imports:
