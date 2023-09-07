@@ -31,6 +31,7 @@ requirements:
     - pip
     - ase
     - {{ pin_compatible('numpy') }}
+    - pybind11
 
 test:
   imports:
