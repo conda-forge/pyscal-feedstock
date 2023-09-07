@@ -1,18 +1,17 @@
 {% set name = "pyscal" %}
-{% set version = "2.10.18" %}
+{% set version = "2.10.20" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/srmnitc/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 912c1bc46d93d67ab8ed94c36df3e590c9f31bee48e415deac32ec2075c92e64
-  patches:
-    - vis.patch
+  url: https://github.com/pyscal/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: 64678c025bdc9dcfe87f33d79caf430b7ec770713724d2fb113d401a7b19d407
+
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py2k]
 
@@ -32,6 +31,7 @@ requirements:
     - pip
     - ase
     - {{ pin_compatible('numpy') }}
+    - pybind11
 
 test:
   imports:
@@ -55,7 +55,7 @@ about:
     pybind11 which allows for fast calculations with possibilities 
     for easy expansion in python.
   doc_url: https://pyscal.org
-  dev_url: https://github.com/srmnitc/pyscal/
+  dev_url: https://github.com/pyscal/pyscal/
 
 extra:
   recipe-maintainers:
