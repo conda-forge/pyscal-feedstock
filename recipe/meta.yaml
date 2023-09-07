@@ -8,8 +8,7 @@ package:
 source:
   url: https://github.com/pyscal/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 64678c025bdc9dcfe87f33d79caf430b7ec770713724d2fb113d401a7b19d407
-  patches:
-    - vis.patch
+
 
 build:
   number: 0
