@@ -1,0 +1,66 @@
+schema_version: 1
+
+context:
+  name: pyscal
+  version: "2.10.21"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/srmnitc/${{ name }}/archive/${{ version }}.tar.gz
+  sha256: a89fc93694b3dcccbbc93723973c6a78e8ea79f1f244125a318de4e46bd6c165
+
+build:
+  number: 1
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: numpy
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+  host:
+    - python
+    - pip
+    - setuptools
+    - numpy
+    - pybind11
+  run:
+    - python
+    - pip
+    - ase
+    - pybind11
+
+tests:
+  - python:
+      imports:
+        - pyscal
+      pip_check: true
+
+about:
+  license: GPL-3.0-only
+  license_file: LICENSE
+  summary: Python library written in C++ for calculation of local atomic structural environment
+  description: |
+    pyscal is a python module for the calculation of local
+    atomic structural environments including Steinhardt's bond
+    orientational order parameters [1] during post-processing
+    of atomistic simulation data. The core functionality of
+    pyscal is written in C++ with python wrappers using
+    pybind11 which allows for fast calculations with possibilities
+    for easy expansion in python.
+  homepage: https://pyscal.org
+  repository: https://github.com/srmnitc/pyscal/
+  documentation: https://pyscal.org
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
+    - srmnitc
